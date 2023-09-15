@@ -1,6 +1,11 @@
+import { Button, buttonVariants } from "@/components/ui/button";
 import Image from "next/image";
-import BookingAccordion from "./BookingAccordion";
-import BookingHistoryBTN from "./BookingHistoryBTN";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 export default function BookingHistory() {
   return (
@@ -30,7 +35,6 @@ export default function BookingHistory() {
                 Booking date: Tue, 16 Oct 2022
               </span>
             </div>
-
             {/* check-in-out-table */}
             <div className="check-in-out-container flex flex-row">
               <div className="check-in-box mr-8 my-8">
@@ -50,16 +54,95 @@ export default function BookingHistory() {
                 </span>
               </div>
             </div>
-
             {/* booking detail accordion */}
-            <BookingAccordion />
+            <div className="booking-detail-accordion">
+              <Accordion type="single" collapsible>
+                <AccordionItem value="item-1">
+                  <AccordionTrigger className="bg-[#E4E6ED] px-6 text-[#2A2E3F] font-sans text-base font-semibold leading-4">
+                    Booking Detail
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <span className="text-[#646D89] font-sans text-base font-normal leading-[150%] tracking-[-0.32px]">
+                      2 Guests (1 Night)
+                    </span>
+                    <span className="text-[#646D89] font-sans text-base font-normal leading-[150%] tracking-[-0.32px]">
+                      Payment success via
+                      <span className="text-[#646D89] font-sans text-base font-semibold leading-[150%] tracking-[-0.32px]">
+                        {" "}
+                        Credit Card - *888
+                      </span>
+                    </span>
+                  </AccordionContent>
+                  <AccordionContent>
+                    <span className="text-[#646D89] font-sans text-base font-normal leading-[150%] tracking-[-0.32px]">
+                      Superior Garden View Room
+                    </span>
+                    <span className="text-[#2A2E3F] font-sans text-base font-semibold leading-[150%] tracking-[-0.32px]">
+                      2,500.00
+                    </span>
+                  </AccordionContent>
+                  <AccordionContent>
+                    <span className="text-[#646D89] font-sans text-base font-normal leading-[150%] tracking-[-0.32px]">
+                      Airport tranfer
+                    </span>
+                    <span className="text-[#2A2E3F] font-sans text-base font-semibold leading-[150%] tracking-[-0.32px]">
+                      200.00
+                    </span>
+                  </AccordionContent>
+                  <AccordionContent>
+                    <span className="text-[#646D89] font-sans text-base font-normal leading-[150%] tracking-[-0.32px]">
+                      Promotion Code
+                    </span>
+                    <span className="text-[#2A2E3F] font-sans text-base font-semibold leading-[150%] tracking-[-0.32px]">
+                      -400.00
+                    </span>
+                  </AccordionContent>
+                  <AccordionContent className="border-t border-solid border-gray-400">
+                    <span className="pt-2 text-[#646D89] font-sans text-base font-normal leading-[150%] tracking-[-0.32px]">
+                      Total
+                    </span>
+                    <span className="pt-1 text-[#2A2E3F] font-sans text-xl font-semibold leading-[150%] tracking-[-0.4px]">
+                      THB 2,300.00
+                    </span>
+                  </AccordionContent>
+                  <AccordionContent innerClassName="flex-col bg-[#D6D9E4] items-start">
+                    <p className="text-[#646D89] font-sans text-base font-semibold leading-[150%] tracking-[-0.32px] py-3">
+                      Additional Request
+                    </p>
+                    <p className="text-[#646D89] font-sans text-base font-normal leading-[150%] tracking-[-0.32px] py-1">
+                      Can i have some chocolate?
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </div>
           </div>
           {/* End booking-details-section */}
         </div>
         {/* End image-booking-container */}
 
         {/* button group */}
-        <BookingHistoryBTN />
+        <div className="button-group flex flex-row justify-between pt-5 pb-10">
+          <div className="left-btn">
+            <Button
+              variant="ghost"
+              className="Cancel-Booking-Btn text-base not-italic font-semibold leading-4 w-fit"
+            >
+              Cancel Booking
+            </Button>
+          </div>
+          <div className="right-btn-group">
+            <Button
+              variant="ghost"
+              className="Room-Detail-Btn text-base not-italic font-semibold leading-4 w-fit"
+            >
+              Room Detail
+            </Button>
+            <Button className="Change-Date-Btn text-base not-italic font-semibold leading-4 w-fit">
+              Change Date
+            </Button>
+          </div>
+        </div>
       </div>
       {/* End history-card */}
     </section>
