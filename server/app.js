@@ -5,7 +5,9 @@ import cors from "cors";
 // import authRouter from "./apps/auth.js";
 import usersRouter from "./apps/users.js";
 import roomsRouter from "./apps/rooms.js";
+
 import paymentRouter from "./apps/payment.js";
+
 import historyRouter from "./apps/history.js";
 
 async function init() {
@@ -15,6 +17,7 @@ async function init() {
   app.use(cors());
   app.use(bodyParser.json());
   app.use("/rooms", roomsRouter);
+
   app.use("/payment", paymentRouter);
   app.use("/history", historyRouter);
 

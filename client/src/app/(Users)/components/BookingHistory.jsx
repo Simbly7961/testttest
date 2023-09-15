@@ -192,7 +192,6 @@ export default function BookingHistory() {
                 {/* {console.log(showCancelDate)} */}
                 {showCancelDate && <div>Cancellation date: {cancelDate}</div>}
               </span>
-            </div>
 
               {/* check-in-out-table */}
               <div className="check-in-out-container flex flex-row">
