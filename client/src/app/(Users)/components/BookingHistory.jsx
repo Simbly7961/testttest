@@ -154,6 +154,44 @@ export default function BookingHistory() {
                     )}
                 </span>
               </div>
+      <div className="history-card flex flex-col w-full border-b border-[#E4E6ED] ">
+        <div className="image-booking-container flex flex-row pt-10">
+          {/* ใส่รูป */}
+          <div className="image-section w-full max-w-[357px] h-[210px] mr-10">
+            <Image
+              src="/superior-w453.png"
+              alt="Superior"
+              width={453}
+              height={320}
+              className="object-cover h-full"
+            />
+          </div>
+          <div className="booking-details-section w-full">
+            {/* room title */}
+            <div className="title-container flex flex-row justify-between items-center w-full">
+              <p className="room-title font-sans text-black text-[28px] font-semibold leading-[150%] tracking-[-0.56px]">
+                Superior Garden View
+              </p>
+              <span className="text-[#9AA1B9] font-sans text-base font-normal leading-[150%] tracking-[-0.32px]">
+                Booking date: Tue, 16 Oct 2022
+              </span>
+              <p className="room-title font-sans text-black text-[28px] font-semibold leading-[150%] tracking-[-0.56px]">
+                Superior Garden View
+              </p>
+              <span className="text-[#9AA1B9] font-sans text-base font-normal leading-[150%] tracking-[-0.32px]">
+                <div>Booking date: Tue, 16 Oct 2022</div>
+                {/* {console.log(showCancelDate)} */}
+                {showCancelDate && <div>Cancellation date: {cancelDate}</div>}
+              </span>
+              <p className="room-title font-sans text-black text-[28px] font-semibold leading-[150%] tracking-[-0.56px]">
+                Superior Garden View
+              </p>
+              {/* Booking & Cancellation Date */}
+              <span className="text-[#9AA1B9] font-sans text-base font-normal leading-[150%] tracking-[-0.32px]">
+                <div>Booking date: Tue, 16 Oct 2022</div>
+                {/* {console.log(showCancelDate)} */}
+                {showCancelDate && <div>Cancellation date: {cancelDate}</div>}
+              </span>
 
               {/* check-in-out-table */}
               <div className="check-in-out-container flex flex-row">
