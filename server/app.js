@@ -6,6 +6,7 @@ import cors from "cors";
 import usersRouter from "./apps/users.js";
 import roomsRouter from "./apps/rooms.js";
 import paymentRouter from "./apps/payment.js";
+import historyRouter from "./apps/history.js";
 
 async function init() {
   const app = express();
@@ -15,6 +16,7 @@ async function init() {
   app.use(bodyParser.json());
   app.use("/rooms", roomsRouter);
   app.use("/payment", paymentRouter);
+  app.use("/history", historyRouter);
 
   app.get("/", (req, res) => {
     res.send("Hello World!");
